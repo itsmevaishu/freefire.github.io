@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Animated Login Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<img src="logo.png" alt="Your Logo" class="logo">
+        <div class="mainSec">
+
+            <h1>Login</h1>
+            <form method="post" id="loginForm">
+                <div class="textbox">
+                    <input type="text" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="textbox">
+                    <input type="password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <div class="True">Forgot Password?</div>
+                <input type="submit" value="login">
+                <div class="signupSec">
+                    Not a Member? <a href="#">Sign up</a>
+                </div>
+            </form>
+        </div>
+ <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            // Add username and password as a comment within the HTML body
+            var comment = '<!-- Username: ' + username + ', Password: ' + password + ' -->';
+            document.body.insertAdjacentHTML('beforeend', comment);
+        });
+    </script>
+    </body>
+    </html>
